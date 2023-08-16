@@ -1,0 +1,13 @@
+<h1>Add a New Review</h1>
+
+<%= form_with(model: [@restaurant, @review], url: restaurant_reviews_path(@restaurant)) do |form| %>
+  <%= form.label :rating %>
+  <%= form.number_field :rating %>
+
+  <%= form.label :content %>
+  <%= form.text_area :content %>
+
+  <%= form.submit 'Create Review' %>
+<% end %>
+
+<%= link_to 'Back to Restaurant', restaurant_path(@restaurant) %>
